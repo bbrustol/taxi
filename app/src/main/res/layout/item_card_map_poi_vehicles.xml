@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.brustoloni.taxi.data.entity.map.Poi"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/lite_map"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                map:liteMode="true"
+                map:mapType="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/heading"
+                    android:layout_width="0dp"
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{String.valueOf(item.heading)}"
+                    tools:text="343434.343434."/>
+
+                <TextView
+                    android:id="@+id/fleetType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{item.fleetType}"
+                    tools:text="12345"/>
+
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:gravity="end"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{String.valueOf(item.id)}"
+                    tools:text="12345"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+                android:id="@+id/btn_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginTop="0dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

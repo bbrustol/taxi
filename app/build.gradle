@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+//apply from: rootProject.file("gradle/coverage.gradle")
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.brustoloni.taxi"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+
+        buildConfigField("String", "BASE_URL", "\"https://fake-poi-api.mytaxi.com\"")
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        animationsDisabled true
+        unitTests.returnDefaultValues = true
+
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.google.android.material:material:1.0.0' // androidX support:design
+
+    implementation 'androidx.appcompat:appcompat:1.0.2' // appcompat-v7
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
+
+    kapt "com.android.databinding:compiler:$databinding_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //retrofit
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$r_c_adapter_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$r_c_adapter_version"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
+
+    //okhttp3
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
+    // Koin for Android
+    api "org.koin:koin-android:$koin_android_version"
+    // Android Scope feature - AndroidX
+    api "org.koin:koin-androidx-scope:$koin_android_version"
+    // Android Architecture ViewModel feature - AndroidX
+    implementation 'org.koin:koin-androidx-viewmodel:1.0.2'
+
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'pub.devrel:easypermissions:1.1.1'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    /*----
+    * Tests
+    -----*/
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "io.mockk:mockk:$mockk_version"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+
+    androidTestImplementation "androidx.test.ext:junit:1.1.0"
+
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:3.12.0"
+
+    androidTestImplementation "org.koin:koin-test:1.0.2"
+
+    androidTestImplementation "io.mockk:mockk-android:1.8.12.kotlin13"
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:${espresso_version}"
+    androidTestImplementation "androidx.test:runner:${test_runner_version}"
+    androidTestUtil "androidx.test:orchestrator:${test_runner_version}"
+
+
+}

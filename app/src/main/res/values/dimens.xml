@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="card_title_size">20sp</dimen>
+    <dimen name="loading_size">150dp</dimen>
+    <dimen name="error_img_size">150dp</dimen>
+    <dimen name="error_page_margin_button">128dp</dimen>
+</resources>

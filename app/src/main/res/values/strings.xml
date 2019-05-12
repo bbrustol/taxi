@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Taxi</string>
+    <string name="try_again">Try Again</string>
+    <string name="error_msg_try_again">Oops, you have problems trying to recover data, please click no button below to
+        try again
+    </string>
+    <string name="empty_msg_try_again">It seems that there is no data for the query, please click on the button below to
+        try again
+    </string>
+    <string name="title_activity_maps">Map</string>
+    <string name="refresh">Refresh</string>
+</resources>
