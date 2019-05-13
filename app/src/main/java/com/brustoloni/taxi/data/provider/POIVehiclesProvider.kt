@@ -1,7 +1,7 @@
 package com.brustoloni.taxi.data.provider
 
-import com.brustoloni.taxi.data.infraestructuture.POIVehiclesService
-import com.brustoloni.taxi.data.infraestructuture.callAsync
+import com.brustoloni.taxi.data.infraestructure.POIVehiclesService
+import com.brustoloni.taxi.data.infraestructure.callAsync
 
 class POIVehiclesProvider(private val service: POIVehiclesService) {
 

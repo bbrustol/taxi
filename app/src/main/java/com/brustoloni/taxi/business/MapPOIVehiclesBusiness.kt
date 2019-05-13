@@ -1,9 +1,9 @@
 package com.brustoloni.taxi.business
 
 import com.brustoloni.taxi.data.entity.map.response.POIListVehiclesResponse
-import com.brustoloni.taxi.data.infraestructuture.Failure
-import com.brustoloni.taxi.data.infraestructuture.Resource
-import com.brustoloni.taxi.data.infraestructuture.Success
+import com.brustoloni.taxi.data.infraestructure.Failure
+import com.brustoloni.taxi.data.infraestructure.Resource
+import com.brustoloni.taxi.data.infraestructure.Success
 import com.brustoloni.taxi.data.provider.POIVehiclesProvider
 
 class MapPOIVehiclesBusiness(private val poiVehiclesProvider: POIVehiclesProvider) {

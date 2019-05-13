@@ -1,4 +1,4 @@
-package com.brustoloni.taxi.data.infraestructuture
+package com.brustoloni.taxi.data.infraestructure
 
 sealed class Resource<out T>
 class Success<out T>(val data: T) : Resource<T>()

@@ -1,4 +1,4 @@
-package com.brustoloni.taxi.data.infraestructuture
+package com.brustoloni.taxi.data.infraestructure
 
 import retrofit2.Retrofit
 

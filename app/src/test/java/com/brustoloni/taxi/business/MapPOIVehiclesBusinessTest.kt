@@ -2,7 +2,7 @@ package com.brustoloni.taxi.business
 
 import android.provider.MediaStore.Video.VideoColumns.CATEGORY
 import com.brustoloni.taxi.data.entity.map.response.POIListVehiclesResponse
-import com.brustoloni.taxi.data.infraestructuture.*
+import com.brustoloni.taxi.data.infraestructure.*
 import com.brustoloni.taxi.data.provider.POIVehiclesProvider
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery

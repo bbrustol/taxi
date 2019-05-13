@@ -1,0 +1,62 @@
+apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
+
+
+jacoco {
+    toolVersion = "$jacoco_version"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+def report = "${rootProject.buildDir}/result_report"
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest'/*, 'createDebugCoverageReport'*/]) {
+
+    group "Reporting"
+    description "Generate Jacoco coverage reports."
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+        html.destination file(report)
+        xml.destination file(report)
+        xml.destination file("${report}/report.xml")
+    }
+
+    def kotlinClasses = []
+    def kotlinSrc = []
+    def execution = []
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*',
+                      '**/*Test*.*', 'android/**/*.*', '**/di/*.*']
+
+    rootProject.subprojects.each { proj ->
+        kotlinClasses << fileTree(dir: "$proj.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)
+        kotlinSrc << "$proj.projectDir/src/main/java"
+        execution << fileTree(dir: proj.buildDir, includes: ['**/*.exec' , '**/*.ec'])
+    }
+
+    sourceDirectories = files(kotlinSrc)
+    classDirectories = files(kotlinClasses)
+
+    executionData = files(execution)
+
+    doLast() {
+        print "file://${report}/index.html"
+    }
+}
+
+coveralls {
+
+    def kotlinSrc = []
+
+    rootProject.subprojects.each { proj ->
+        kotlinSrc << "$proj.projectDir/src/main/java"
+    }
+
+    sourceDirs = files(kotlinSrc).files.absolutePath
+    print sourceDirs
+    jacocoReportPath = "${report}/report.xml"
+}

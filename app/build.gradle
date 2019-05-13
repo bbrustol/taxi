@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-//apply from: rootProject.file("gradle/coverage.gradle")
+apply from: rootProject.file("gradle/coverage.gradle")
 
 android {
     compileSdkVersion 28
@@ -93,6 +93,7 @@ dependencies {
     implementation 'org.koin:koin-androidx-viewmodel:1.0.2'
 
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
+
     implementation 'pub.devrel:easypermissions:1.1.1'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -116,6 +117,4 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:${espresso_version}"
     androidTestImplementation "androidx.test:runner:${test_runner_version}"
     androidTestUtil "androidx.test:orchestrator:${test_runner_version}"
-
-
 }

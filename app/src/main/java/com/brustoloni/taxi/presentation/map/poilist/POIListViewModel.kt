@@ -7,9 +7,9 @@ import androidx.lifecycle.MutableLiveData
 import com.brustoloni.taxi.business.MapPOIVehiclesBusiness
 import com.brustoloni.taxi.data.entity.map.Poi
 import com.brustoloni.taxi.data.entity.map.response.POIListVehiclesResponse
-import com.brustoloni.taxi.data.infraestructuture.Failure
-import com.brustoloni.taxi.data.infraestructuture.Success
-import com.brustoloni.taxi.data.infraestructuture.handle
+import com.brustoloni.taxi.data.infraestructure.Failure
+import com.brustoloni.taxi.data.infraestructure.Success
+import com.brustoloni.taxi.data.infraestructure.handle
 import com.brustoloni.taxi.presentation.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -26,13 +26,14 @@ class POIListViewModel(
     private var mLon2:Double = 0.0
 
     val dataReceived: MutableLiveData<List<Poi>> = MutableLiveData()
-    private val listVisibility = MutableLiveData<Int>().apply { value = GONE }
+    val listVisibility = MutableLiveData<Int>().apply { value = GONE }
 
     fun start(lat1: Double, lon1: Double, lat2: Double, lon2: Double) {
         mLat1 = lat1
         mLon1 = lon1
         mLat2 = lat2
         mLon2 = lon2
+
 
         configVisibility(ViewState.LOADING)
         coroutineScope.launch {
@@ -59,7 +60,6 @@ class POIListViewModel(
         super.configVisibility(viewState)
         val result = setupViewState(viewState)
         listVisibility.value = result.showData
-
     }
 
     override fun tryAgain() {

@@ -1,4 +1,4 @@
-package com.brustoloni.taxi.data.infraestructuture
+package com.brustoloni.taxi.data.infraestructure
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

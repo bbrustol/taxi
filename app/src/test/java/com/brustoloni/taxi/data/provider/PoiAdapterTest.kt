@@ -1,7 +1,7 @@
 package com.brustoloni.taxi.data.provider
 
 import com.brustoloni.taxi.data.entity.map.response.POIListVehiclesResponse
-import com.brustoloni.taxi.data.infraestructuture.ResourceUtils
+import com.brustoloni.taxi.data.infraestructure.ResourceUtils
 import com.squareup.moshi.Moshi
 import org.junit.Assert.*
 import org.junit.Before

@@ -1,4 +1,4 @@
-package com.brustoloni.taxi.data.infraestructuture
+package com.brustoloni.taxi.data.infraestructure
 
 import com.brustoloni.taxi.data.entity.map.Coordinate
 import com.brustoloni.taxi.data.entity.map.Poi

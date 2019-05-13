@@ -1,4 +1,4 @@
-package com.brustoloni.taxi.data.infraestructuture
+package com.brustoloni.taxi.data.infraestructure
 
 sealed class NetworkState
 class DataNotAvailable : NetworkState()

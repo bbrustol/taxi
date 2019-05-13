@@ -1,6 +1,6 @@
 package com.brustoloni.taxi.data.di
 
-import com.brustoloni.taxi.data.infraestructuture.RetrofitFactory
+import com.brustoloni.taxi.data.infraestructure.RetrofitFactory
 import org.koin.dsl.module.module
 import retrofit2.converter.moshi.MoshiConverterFactory
 
