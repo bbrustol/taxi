@@ -1,0 +1,274 @@
+{
+  "poiList": [
+    {
+      "id": 905952,
+      "coordinate": {
+        "latitude": 53.624030196194624,
+        "longitude": 10.010969151443595
+      },
+      "fleetType": "TAXI",
+      "heading": 4.947849997371024
+    },
+    {
+      "id": 550933,
+      "coordinate": {
+        "latitude": 53.466157151757166,
+        "longitude": 9.93099789383389
+      },
+      "fleetType": "POOLING",
+      "heading": 101.58140644497983
+    },
+    {
+      "id": 580434,
+      "coordinate": {
+        "latitude": 53.62317107421955,
+        "longitude": 9.939066700905483
+      },
+      "fleetType": "TAXI",
+      "heading": 275.2769135943178
+    },
+    {
+      "id": 986161,
+      "coordinate": {
+        "latitude": 53.50074356405738,
+        "longitude": 9.969162217901202
+      },
+      "fleetType": "TAXI",
+      "heading": 92.02100425415657
+    },
+    {
+      "id": 207858,
+      "coordinate": {
+        "latitude": 53.53033329247482,
+        "longitude": 9.97693331209606
+      },
+      "fleetType": "TAXI",
+      "heading": 329.70686862619584
+    },
+    {
+      "id": 219025,
+      "coordinate": {
+        "latitude": 53.534376487128796,
+        "longitude": 9.988880367437266
+      },
+      "fleetType": "POOLING",
+      "heading": 294.341271984994
+    },
+    {
+      "id": 130717,
+      "coordinate": {
+        "latitude": 53.592056552863355,
+        "longitude": 9.926876238844093
+      },
+      "fleetType": "TAXI",
+      "heading": 100.77087528491084
+    },
+    {
+      "id": 815676,
+      "coordinate": {
+        "latitude": 53.53592207711968,
+        "longitude": 9.924186704253454
+      },
+      "fleetType": "POOLING",
+      "heading": 81.15931673053444
+    },
+    {
+      "id": 767956,
+      "coordinate": {
+        "latitude": 53.6448184916396,
+        "longitude": 10.010097394890163
+      },
+      "fleetType": "POOLING",
+      "heading": 69.12216855707044
+    },
+    {
+      "id": 953498,
+      "coordinate": {
+        "latitude": 53.561821604995835,
+        "longitude": 10.006017029028042
+      },
+      "fleetType": "POOLING",
+      "heading": 113.05925920846217
+    },
+    {
+      "id": 183310,
+      "coordinate": {
+        "latitude": 53.48500656059017,
+        "longitude": 9.993501031795494
+      },
+      "fleetType": "POOLING",
+      "heading": 128.1131913378432
+    },
+    {
+      "id": 612523,
+      "coordinate": {
+        "latitude": 53.5311454489685,
+        "longitude": 10.012285359521652
+      },
+      "fleetType": "TAXI",
+      "heading": 32.98213862457046
+    },
+    {
+      "id": 621051,
+      "coordinate": {
+        "latitude": 53.55749257504086,
+        "longitude": 9.943276395943696
+      },
+      "fleetType": "POOLING",
+      "heading": 107.47004424264374
+    },
+    {
+      "id": 401839,
+      "coordinate": {
+        "latitude": 53.54951499892399,
+        "longitude": 10.015575039271212
+      },
+      "fleetType": "POOLING",
+      "heading": 264.1188874252592
+    },
+    {
+      "id": 619455,
+      "coordinate": {
+        "latitude": 53.536386064422196,
+        "longitude": 9.984140429899234
+      },
+      "fleetType": "TAXI",
+      "heading": 248.71936485987197
+    },
+    {
+      "id": 392976,
+      "coordinate": {
+        "latitude": 53.59127684059408,
+        "longitude": 9.97952187796934
+      },
+      "fleetType": "POOLING",
+      "heading": 83.88711511815944
+    },
+    {
+      "id": 564351,
+      "coordinate": {
+        "latitude": 53.59448382490447,
+        "longitude": 9.999549685905755
+      },
+      "fleetType": "TAXI",
+      "heading": 21.911049038783318
+    },
+    {
+      "id": 964019,
+      "coordinate": {
+        "latitude": 53.47222417998395,
+        "longitude": 9.991358945004485
+      },
+      "fleetType": "POOLING",
+      "heading": 189.56754976446007
+    },
+    {
+      "id": 189635,
+      "coordinate": {
+        "latitude": 53.54254253413439,
+        "longitude": 9.966003904018985
+      },
+      "fleetType": "POOLING",
+      "heading": 235.1867854810423
+    },
+    {
+      "id": 199806,
+      "coordinate": {
+        "latitude": 53.54144783864146,
+        "longitude": 10.016708891388362
+      },
+      "fleetType": "POOLING",
+      "heading": 22.652789753037222
+    },
+    {
+      "id": 851012,
+      "coordinate": {
+        "latitude": 53.58833509972032,
+        "longitude": 9.967924534656515
+      },
+      "fleetType": "TAXI",
+      "heading": 114.79176937456917
+    },
+    {
+      "id": 118914,
+      "coordinate": {
+        "latitude": 53.628020510058064,
+        "longitude": 10.00045555385628
+      },
+      "fleetType": "POOLING",
+      "heading": 132.51565953930933
+    },
+    {
+      "id": 180330,
+      "coordinate": {
+        "latitude": 53.6168798247747,
+        "longitude": 9.918736019708232
+      },
+      "fleetType": "POOLING",
+      "heading": 230.9773231947473
+    },
+    {
+      "id": 273065,
+      "coordinate": {
+        "latitude": 53.57184469451096,
+        "longitude": 9.914888238989198
+      },
+      "fleetType": "POOLING",
+      "heading": 152.98892532994873
+    },
+    {
+      "id": 979893,
+      "coordinate": {
+        "latitude": 53.63906325700517,
+        "longitude": 9.954150455299148
+      },
+      "fleetType": "TAXI",
+      "heading": 286.9446570821345
+    },
+    {
+      "id": 763095,
+      "coordinate": {
+        "latitude": 53.5755616004251,
+        "longitude": 10.016355286494454
+      },
+      "fleetType": "TAXI",
+      "heading": 315.2732980602903
+    },
+    {
+      "id": 704022,
+      "coordinate": {
+        "latitude": 53.53251991565818,
+        "longitude": 9.958420645793991
+      },
+      "fleetType": "TAXI",
+      "heading": 5.037270957066291
+    },
+    {
+      "id": 956511,
+      "coordinate": {
+        "latitude": 53.65221831664685,
+        "longitude": 9.974867960824184
+      },
+      "fleetType": "POOLING",
+      "heading": 263.71152175611473
+    },
+    {
+      "id": 468536,
+      "coordinate": {
+        "latitude": 53.59617210396629,
+        "longitude": 9.909973814552629
+      },
+      "fleetType": "TAXI",
+      "heading": 154.47835122902788
+    },
+    {
+      "id": 374129,
+      "coordinate": {
+        "latitude": 53.539065869129004,
+        "longitude": 10.012004676712927
+      },
+      "fleetType": "TAXI",
+      "heading": 116.29475895666916
+    }
+  ]
+}
