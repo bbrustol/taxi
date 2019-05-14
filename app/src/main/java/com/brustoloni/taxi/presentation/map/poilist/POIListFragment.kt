@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brustoloni.taxi.R
 import com.brustoloni.taxi.data.entity.map.Poi
+import com.brustoloni.taxi.data.infraestructure.DataMock.Companion.myInitPositions
 import com.brustoloni.taxi.databinding.FragmentMapPoiVehiclesBinding
 import com.brustoloni.taxi.utils.Constants
 import kotlinx.android.synthetic.main.fragment_map_poi_vehicles.*
@@ -35,7 +36,9 @@ class POIListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        if (savedInstanceState != null) {
+            super.onSaveInstanceState(savedInstanceState)
+        }
         dataBinding.viewModel = viewModel
         dataBinding.lifecycleOwner = this
         dataBinding.executePendingBindings()
@@ -43,7 +46,13 @@ class POIListFragment : Fragment() {
         initializeRecyclerView(view)
         setupListeners()
 
-        viewModel.start(53.46036882190762,9.909716434648558,53.668806556867445,10.019908942943804)
+        if (!viewModel.flagFirstLoad.value!!) {
+            viewModel.flagFirstLoad.value = true
+            viewModel.start(myInitPositions[0],
+                            myInitPositions[1],
+                            myInitPositions[2],
+                            myInitPositions[3])
+        }
     }
 
     private fun initializeRecyclerView(view: View) {

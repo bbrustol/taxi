@@ -27,6 +27,7 @@ class POIListViewModel(
 
     val dataReceived: MutableLiveData<List<Poi>> = MutableLiveData()
     val listVisibility = MutableLiveData<Int>().apply { value = GONE }
+    val flagFirstLoad = MutableLiveData<Boolean>().apply { value = false }
 
     fun start(lat1: Double, lon1: Double, lat2: Double, lon2: Double) {
         mLat1 = lat1

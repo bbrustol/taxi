@@ -34,10 +34,4 @@ class PoiListRobot : BaseRobot() {
         matchId(R.id.imageStatus)
         return this
     }
-
-    fun waitSuccessView(): PoiListRobot {
-        Thread.sleep(1000)
-        matchId(R.id.rv_map_poi_vehicles)
-        return this
-    }
 }

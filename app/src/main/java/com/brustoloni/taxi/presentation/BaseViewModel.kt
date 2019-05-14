@@ -9,11 +9,11 @@ import com.brustoloni.taxi.R
 
 abstract class BaseViewModel(private val application: Application) : ViewModel() {
 
-    protected enum class ViewState { SUCCESS, ERROR, LOADING, NO_DATA }
+    enum class ViewState { SUCCESS, ERROR, LOADING, NO_DATA }
 
     val loading = MutableLiveData<Int>().apply { value = VISIBLE }
     val alternativePageVisibility = MutableLiveData<Int>().apply { value = GONE }
-    val tryAgainVisibility = MutableLiveData<Int>().apply { value = GONE }
+    private val tryAgainVisibility = MutableLiveData<Int>().apply { value = GONE }
     val statusImage = MutableLiveData<Int>().apply { value = R.drawable.sad_cloud }
     val message = MutableLiveData<String>().apply { value = "" }
 
@@ -30,10 +30,7 @@ abstract class BaseViewModel(private val application: Application) : ViewModel()
         }
     }
 
-    protected open fun configVisibility(viewState: ViewState) {
-
-        Thread {
-            Thread.sleep(10)
+    open fun configVisibility(viewState: ViewState) {
 
             val result = setupViewState(viewState)
 
@@ -49,7 +46,7 @@ abstract class BaseViewModel(private val application: Application) : ViewModel()
 
             message.value = application.getString(result.message)
 
-        }
+
     }
 
     abstract fun tryAgain()

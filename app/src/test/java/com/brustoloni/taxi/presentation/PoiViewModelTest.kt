@@ -27,9 +27,6 @@ class PoiViewModelTest {
     private lateinit var observerSuccess: Observer<List<Poi>>
 
     @MockK(relaxUnitFun = true)
-    private lateinit var observerVisibility: Observer<Int>
-
-    @MockK(relaxUnitFun = true)
     private lateinit var observerError: Observer<Int>
 
     @MockK(relaxUnitFun = true)

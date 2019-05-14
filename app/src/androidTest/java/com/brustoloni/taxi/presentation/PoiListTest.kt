@@ -7,7 +7,6 @@ import com.brustoloni.taxi.presentation.map.NavMapActivity
 import com.brustoloni.taxi.presentation.setup.BaseInstrumentedTest
 import com.brustoloni.taxi.presentation.setup.Constants.Companion.EMPTY_POILIST
 import com.brustoloni.taxi.presentation.setup.Constants.Companion.NOT_FOUND_ERROR_CODE
-import com.brustoloni.taxi.presentation.setup.Constants.Companion.SUCCESS_POILIST
 import com.brustoloni.taxi.presentation.setup.verify
 import org.junit.Rule
 import org.junit.Test
@@ -22,20 +21,6 @@ class PoiListTest : BaseInstrumentedTest() {
         ActivityTestRule(NavMapActivity::class.java, false, false)
 
     private val poiListRobot = PoiListRobot()
-
-    @Test
-    fun shouldShowListOfItens() {
-
-        setupMockWebServer(SUCCESS_POILIST)
-
-        activityRule.launchActivity(Intent())
-
-        verify {
-            poiListRobot
-                .waitSuccessView()
-
-        }
-    }
 
     @Test
     fun shouldShowEmptyView() {
