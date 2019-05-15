@@ -98,13 +98,13 @@ class DetailActivity : AppCompatActivity(),
         }
 
         if (seletedLatLng != null) {
-            seletedMarkerAnimation(seletedLatLng)
+            selectedMarkerAnimation(seletedLatLng)
         }
     }
 
-    private fun seletedMarkerAnimation(seletedLatLng: LatLng) {
+    private fun selectedMarkerAnimation(selectedLatLng: LatLng) {
         val location: CameraPosition = CameraPosition.Builder().
-            target(seletedLatLng)
+            target(selectedLatLng)
             .zoom(15.5f)
             .bearing(0f)
             .tilt(25f)
