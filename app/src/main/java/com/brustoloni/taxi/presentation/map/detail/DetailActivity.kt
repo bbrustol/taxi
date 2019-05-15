@@ -36,6 +36,17 @@ class DetailActivity : AppCompatActivity(),
         return intent.getIntExtra(Constants.EXTRA_ID_POI, 0)
     }
 
+    private fun selectedMarkerAnimation(selectedLatLng: LatLng) {
+        val location: CameraPosition = CameraPosition.Builder().
+            target(selectedLatLng)
+            .zoom(15.5f)
+            .bearing(0f)
+            .tilt(25f)
+            .build()
+
+        map.animateCamera(CameraUpdateFactory.newCameraPosition(location))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -100,16 +111,5 @@ class DetailActivity : AppCompatActivity(),
         if (seletedLatLng != null) {
             selectedMarkerAnimation(seletedLatLng)
         }
-    }
-
-    private fun selectedMarkerAnimation(selectedLatLng: LatLng) {
-        val location: CameraPosition = CameraPosition.Builder().
-            target(selectedLatLng)
-            .zoom(15.5f)
-            .bearing(0f)
-            .tilt(25f)
-            .build()
-
-        map.animateCamera(CameraUpdateFactory.newCameraPosition(location))
     }
 }
