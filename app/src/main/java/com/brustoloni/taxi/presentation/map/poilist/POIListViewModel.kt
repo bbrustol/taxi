@@ -28,7 +28,7 @@ class POIListViewModel(
     val dataReceived: MutableLiveData<List<Poi>> = MutableLiveData()
     val listVisibility = MutableLiveData<Int>().apply { value = GONE }
     val flagFirstLoad = MutableLiveData<Boolean>().apply { value = false }
-
+    var dataResponse: POIListVehiclesResponse? = null
     fun start(lat1: Double, lon1: Double, lat2: Double, lon2: Double) {
         mLat1 = lat1
         mLon1 = lon1
@@ -50,6 +50,7 @@ class POIListViewModel(
     private fun success(): Success<POIListVehiclesResponse>.() -> Unit = {
 
         if (!this.data.poiList.isNullOrEmpty()) {
+            dataResponse = this.data
             dataReceived.value = this.data.poiList
             configVisibility(ViewState.SUCCESS)
         } else {

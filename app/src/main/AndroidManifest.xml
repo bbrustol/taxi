@@ -21,7 +21,7 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".presentation.map.NavMapActivity"
+            android:name=".presentation.map.poilist.POIListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter>
@@ -31,6 +31,7 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".presentation.map.detail.DetailActivity"/>
 
     </application>
 

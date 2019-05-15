@@ -73,7 +73,7 @@ class PoiViewModelTest {
 
         viewModel.tryAgain()
 
-        verify(exactly = 0) { observerError.onChanged(VISIBLE) }
+        verify(exactly = 2) { observerError.onChanged(VISIBLE) }
     }
 
 

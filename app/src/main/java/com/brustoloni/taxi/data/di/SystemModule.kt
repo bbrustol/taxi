@@ -7,6 +7,5 @@ import org.koin.dsl.module.module
 
 
 val systemModule = module {
-
     factory("Default") { Moshi.Builder().build() }
 }

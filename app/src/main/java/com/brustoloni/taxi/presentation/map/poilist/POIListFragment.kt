@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brustoloni.taxi.R
 import com.brustoloni.taxi.data.entity.map.Poi
 import com.brustoloni.taxi.data.infraestructure.DataMock.Companion.myInitPositions
 import com.brustoloni.taxi.databinding.FragmentMapPoiVehiclesBinding
-import com.brustoloni.taxi.utils.Constants
+import com.brustoloni.taxi.presentation.map.detail.detailActivity
 import kotlinx.android.synthetic.main.fragment_map_poi_vehicles.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+val POILIST_FRAGMENT_TAG: String = POIListFragment::class.java.name
 
 class POIListFragment : Fragment() {
 
@@ -43,7 +43,7 @@ class POIListFragment : Fragment() {
         dataBinding.lifecycleOwner = this
         dataBinding.executePendingBindings()
 
-        initializeRecyclerView(view)
+        initializeRecyclerView()
         setupListeners()
 
         if (!viewModel.flagFirstLoad.value!!) {
@@ -55,7 +55,7 @@ class POIListFragment : Fragment() {
         }
     }
 
-    private fun initializeRecyclerView(view: View) {
+    private fun initializeRecyclerView() {
         val recycleListener = RecyclerView.RecyclerListener { holder ->
             val mapHolder = holder as POIListAdapter.POIViewHandler
             mapHolder.clearView()
@@ -64,8 +64,7 @@ class POIListFragment : Fragment() {
         dataBinding.rvMapPoiVehicles.layoutManager = LinearLayoutManager(context)
         dataBinding.rvMapPoiVehicles.setRecyclerListener(recycleListener)
         val clickAction = { poi: Poi ->
-            val bundle = Bundle().apply { putParcelable(Constants.EXTRA_POI_LIST_VEHICLES, poi) }
-            view.findNavController().navigate(R.id.action_map_poi_vehicles_to_detail, bundle)
+            startActivity(viewModel.dataResponse?.let { detailActivity().getLaunchingIntent(context,poi.id, it) })
         }
 
         dataBinding.rvMapPoiVehicles.adapter = POIListAdapter(clickAction)

@@ -3,7 +3,7 @@ package com.brustoloni.taxi.presentation
 import android.content.Intent
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.brustoloni.taxi.presentation.map.NavMapActivity
+import com.brustoloni.taxi.presentation.map.poilist.POIListActivity
 import com.brustoloni.taxi.presentation.setup.BaseInstrumentedTest
 import com.brustoloni.taxi.presentation.setup.Constants.Companion.EMPTY_POILIST
 import com.brustoloni.taxi.presentation.setup.Constants.Companion.NOT_FOUND_ERROR_CODE
@@ -17,8 +17,8 @@ import org.junit.runner.RunWith
 class PoiListTest : BaseInstrumentedTest() {
 
     @get:Rule
-    var activityRule: ActivityTestRule<NavMapActivity> =
-        ActivityTestRule(NavMapActivity::class.java, false, false)
+    var activityRule: ActivityTestRule<POIListActivity> =
+        ActivityTestRule(POIListActivity::class.java, false, false)
 
     private val poiListRobot = PoiListRobot()
 
