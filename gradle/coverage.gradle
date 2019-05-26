@@ -38,10 +38,9 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest'/*, 'cr
         execution << fileTree(dir: proj.buildDir, includes: ['**/*.exec' , '**/*.ec'])
     }
 
-    sourceDirectories = files(kotlinSrc)
-    classDirectories = files(kotlinClasses)
-
-    executionData = files(execution)
+    sourceDirectories.from = files(kotlinSrc)
+    classDirectories.from = files(kotlinClasses)
+    executionData.from = files(execution)
 
     doLast() {
         print "file://${report}/index.html"
