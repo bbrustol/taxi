@@ -34,8 +34,6 @@ class PoiViewModelTest {
 
     private val poiListVehiclesResponse = DataMock.createList()
 
-    private val poi = DataMock.createPoi()
-
     private lateinit var viewModel : POIListViewModel
 
     @get:Rule
