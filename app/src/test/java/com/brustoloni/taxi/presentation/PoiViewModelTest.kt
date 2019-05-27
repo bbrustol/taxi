@@ -75,19 +75,5 @@ class PoiViewModelTest {
 
         verify(exactly = 2) { observerError.onChanged(VISIBLE) }
     }
-
-
-    @Test
-    fun shouldNotExecuteWithoutCategories()  {
-
-        viewModel.dataReceived.observeForever(observerSuccess)
-
-        coEvery { business.fetchPOIVehicles(any(), any(), any(), any()) } returns Success(poiListVehiclesResponse)
-
-        viewModel.start(0.0, 1.1, 2.2, 3.3)
-
-        verify(exactly = 1) { observerSuccess.onChanged(listOf(poi)) }
-
-    }
 }
 
